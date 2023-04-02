@@ -178,7 +178,7 @@ step3 <- function(cgwasenv) {
   write.table(corm,
               file.path(cgwasenv$.CGWAS_DETAIL_PATH, "BCCorrelationStat.txt"),
               row.names = F, quote = F, sep = "\t")
-  write.table(corm[, c(1,2,5,6,8,12)],
+  write.table(corm[, c(1,2,5,6,8,12), drop = FALSE],
               file.path(cgwasenv$.CGWAS_DETAIL_PATH, "SummaryGetPsi.txt"),
               row.names = F, quote = F, sep = "\t")
   logOutput("Summary of GetPsi written to Details/SummaryGetPsi.txt\n", cgwasenv = cgwasenv)
