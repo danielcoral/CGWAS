@@ -170,21 +170,7 @@ step3 <- function(cgwasenv) {
                 signif(resinfm[pairma[,1], 4]-1, 7),
                 signif(resinfm[pairma[,2], 4]-1, 7),
                 tresm)
-
-  colnames(corm) <- c("GWAS1", "GWAS2",
-                      "T1Eff", "T2Eff",
-                      "StatCor", "Psi", "EffCov", "allPi", "T1sEff", "T2sEff", "EffsCov", "sigPi")
-  write.table(corm,
-              file.path(cgwasenv$.CGWAS_DETAIL_PATH, "BCCorrelationStat.txt"),
-              row.names = F, quote = F, sep = "\t")
-  write.table(corm[, c(1,2,5,6,8,12)],
-              file.path(cgwasenv$.CGWAS_DETAIL_PATH, "SummaryGetPsi.txt"),
-              row.names = F, quote = F, sep = "\t")
-  logOutput("Summary of GetPsi written to Details/SummaryGetPsi.txt\n", cgwasenv = cgwasenv)
-
-  stopCluster(cl)
-
-  logOutput("\nC-GWAS step 3 completed\n", cgwasenv = cgwasenv)
+  print(corm)
 }
 
 # EbICo
