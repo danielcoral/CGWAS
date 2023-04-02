@@ -164,13 +164,7 @@ step3 <- function(cgwasenv) {
                    .inorder = T) %dopar%
     CorE.ICE(pairma[i, 1], pairma[i, 2], resinfm, maSpltRw, maSpltN, cgwasenv)
   tresm <- signif(tresm, 7)
-
-  corm <- cbind(cgwasenv$.TRAIT_NAME[pairma[,1]],
-                cgwasenv$.TRAIT_NAME[pairma[,2]],
-                signif(resinfm[pairma[,1], 4]-1, 7),
-                signif(resinfm[pairma[,2], 4]-1, 7),
-                tresm)
-  print(corm)
+  print(tresm)
 }
 
 # EbICo
